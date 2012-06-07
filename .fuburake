@@ -1,0 +1,9 @@
+task :default do |t|
+	verbose(true) do
+		sh "git init"
+		File.rename("ignore.txt", ".gitignore")
+		sh "git add ."
+		sh "git submodule add git://github.com/DarthFubuMVC/buildsupport.git buildsupport"
+		sh "git commit -m 'seeding'"
+	end
+end
