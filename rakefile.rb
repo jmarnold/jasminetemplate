@@ -37,3 +37,7 @@ task :enable_jasmine_coffee do
 	Dir.mkdir bottlesDir unless exists?(bottlesDir)
 	FileUtils.cp_r(zipFile, File.join(bottlesDir, "FubuMVC.Coffee.dll"))
 end
+
+def self.nugetDir(package)
+	Dir.glob(File.join(Nuget.package_root,"#{package}.*")).sort.last
+end
